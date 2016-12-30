@@ -1,3 +1,6 @@
+/*
+ *
+ */
 package vertx;
 
 import io.vertx.core.Vertx;
@@ -13,13 +16,13 @@ public class SockJsTest {
 		Vertx vertx = Vertx.vertx();
 
 		Router router = Router.router(vertx);
-		
+
 		SockJSHandler sockJsHandler = SockJSHandler.create(vertx);
 		sockJsHandler.socketHandler(sockJsSocker -> {
-			
+
 			sockJsSocker.handler(sockJsSocker::write);
 		});
-		
+
 		router.route().handler(CorsHandler.create("*").allowCredentials(false));
 		router.route("/socks/*").handler(sockJsHandler);
 		router.route("/webapp/*").handler(StaticHandler.create("webapp"));

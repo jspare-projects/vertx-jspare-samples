@@ -1,7 +1,4 @@
-/**
- * Copyright 2016 Senior Sistemas.
- *
- * Software sob Medida
+/*
  *
  */
 package org.jspare.vertx.samples.auth;

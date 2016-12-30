@@ -1,3 +1,6 @@
+/*
+ *
+ */
 package org.jspare.vertx.samples.route;
 
 import org.jspare.vertx.web.annotation.handler.Handler;
@@ -11,9 +14,9 @@ import io.vertx.ext.web.RoutingContext;
 public class MultiHandlersOrderedRoute {
 
 	@Get
-	@Handler(order=1)
-	public void route1(RoutingContext routingContext){
-		
+	@Handler(order = 1)
+	public void route1(RoutingContext routingContext) {
+
 		HttpServerResponse response = routingContext.response();
 		// enable chunked responses because we will be adding data as
 		// we execute over other handlers. This is only required once and
@@ -25,22 +28,22 @@ public class MultiHandlersOrderedRoute {
 		// Call the next matching route after a 5 second delay
 		routingContext.vertx().setTimer(5000, tid -> routingContext.next());
 	}
-	
+
 	@Get
-	@Handler(order=3)
-	public void route2(RoutingContext routingContext){
-		
+	@Handler(order = 3)
+	public void route2(RoutingContext routingContext) {
+
 		HttpServerResponse response = routingContext.response();
 		response.write("route2\n");
 
 		// Call the next matching route after a 5 second delay
 		routingContext.vertx().setTimer(5000, tid -> routingContext.next());
 	}
-	
+
 	@Get
-	@Handler(order=2)
-	public void route3(RoutingContext routingContext){
-		
+	@Handler(order = 2)
+	public void route3(RoutingContext routingContext) {
+
 		HttpServerResponse response = routingContext.response();
 		response.write("route3");
 

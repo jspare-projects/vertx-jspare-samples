@@ -1,8 +1,5 @@
-/**
- * Copyright 2016 Senior Sistemas.
+/*
  *
- * Software sob Medida
- * 
  */
 package org.jspare.vertx.samples.auth;
 
@@ -14,13 +11,13 @@ import io.vertx.ext.auth.AuthProvider;
 import io.vertx.ext.auth.User;
 
 public class SimpleAuthProvider implements AuthProvider {
-	
-	public static SimpleAuthProvider create(){
-		
+
+	public static SimpleAuthProvider create() {
+
 		return new SimpleAuthProvider();
 	}
-	
-	private SimpleAuthProvider(){
+
+	private SimpleAuthProvider() {
 	}
 
 	@Override

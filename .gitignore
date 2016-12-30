@@ -14,3 +14,12 @@ hs_err_pid*
 samples-core/.settings/
 samples-web/.settings/
 *.classpath
+.idea/
+*.factorypath
+*.iml
+samples-proxy-consumer/.settings/
+samples-clustered/
+.settings/
+samples-proxy-provider/src/main/resources/vertx-processor-sample-js/
+samples-proxy-provider/src/main/generated/org/jspare/vertx/samples/proxy/ProductConverter.java
+samples-proxy-provider/src/main/generated/

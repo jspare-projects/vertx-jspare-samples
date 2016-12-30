@@ -1,8 +1,5 @@
-/**
- * Copyright 2016 Senior Sistemas.
+/*
  *
- * Software sob Medida
- * 
  */
 package org.jspare.vertx.samples.eventbus;
 
@@ -20,13 +17,13 @@ public class MessagesDriven {
 	public void helloWorld(Message<String> event) {
 
 		String body = event.body();
-		
-		if("fail".equals(body)){
-			
+
+		if ("fail".equals(body)) {
+
 			event.fail(1, "failed");
 			return;
 		}
-		
+
 		log.debug("Event driven says Hello {}", event.body());
 		event.reply("Hello " + event.body());
 	}

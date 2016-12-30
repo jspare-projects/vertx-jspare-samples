@@ -1,8 +1,5 @@
-/**
- * Copyright 2016 Senior Sistemas.
+/*
  *
- * Software sob Medida
- * 
  */
 package org.jspare.vertx.samples.route;
 
@@ -19,10 +16,10 @@ import org.jspare.vertx.web.annotation.handling.Parameter;
 import org.jspare.vertx.web.annotation.method.Get;
 import org.jspare.vertx.web.annotation.method.Post;
 import org.jspare.vertx.web.annotation.subrouter.SubRouter;
-import org.jspare.vertx.web.handling.Handling;
+import org.jspare.vertx.web.handler.APIHandler;
 
 @SubRouter("/cars")
-public class CarRoute extends Handling {
+public class CarRoute extends APIHandler {
 
 	@Get("/:id")
 	@Handler

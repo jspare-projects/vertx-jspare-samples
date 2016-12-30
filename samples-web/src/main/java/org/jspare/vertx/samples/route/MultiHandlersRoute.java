@@ -1,3 +1,6 @@
+/*
+ *
+ */
 package org.jspare.vertx.samples.route;
 
 import org.jspare.vertx.web.annotation.handler.Handler;
@@ -9,11 +12,11 @@ import io.vertx.ext.web.RoutingContext;
 
 @SubRouter("/multiroutes")
 public class MultiHandlersRoute {
-	
+
 	@Get
 	@Handler
-	public void route1(RoutingContext routingContext){
-		
+	public void route1(RoutingContext routingContext) {
+
 		HttpServerResponse response = routingContext.response();
 		// enable chunked responses because we will be adding data as
 		// we execute over other handlers. This is only required once and
@@ -25,22 +28,22 @@ public class MultiHandlersRoute {
 		// Call the next matching route after a 5 second delay
 		routingContext.vertx().setTimer(5000, tid -> routingContext.next());
 	}
-	
+
 	@Get
 	@Handler
-	public void route2(RoutingContext routingContext){
-		
+	public void route2(RoutingContext routingContext) {
+
 		HttpServerResponse response = routingContext.response();
 		response.write("route2\n");
 
 		// Call the next matching route after a 5 second delay
 		routingContext.vertx().setTimer(5000, tid -> routingContext.next());
 	}
-	
+
 	@Get
 	@Handler
-	public void route3(RoutingContext routingContext){
-		
+	public void route3(RoutingContext routingContext) {
+
 		HttpServerResponse response = routingContext.response();
 		response.write("route3");
 

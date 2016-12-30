@@ -1,8 +1,5 @@
-/**
- * Copyright 2016 Senior Sistemas.
+/*
  *
- * Software sob Medida
- * 
  */
 package org.jspare.vertx.samples.route;
 
@@ -10,19 +7,12 @@ import org.jspare.vertx.web.annotation.handler.BlockingHandler;
 import org.jspare.vertx.web.annotation.handler.Handler;
 import org.jspare.vertx.web.annotation.method.Get;
 import org.jspare.vertx.web.annotation.subrouter.SubRouter;
-import org.jspare.vertx.web.handling.Handling;
+import org.jspare.vertx.web.handler.APIHandler;
 
 import io.vertx.ext.web.RoutingContext;
 
 @SubRouter("/handlers")
-public class HandlersRoute extends Handling {
-
-	@Get("/handler")
-	@Handler
-	public void handler() {
-
-		success("Handler");
-	}
+public class HandlersRoute extends APIHandler {
 
 	@Get("/blocking")
 	@BlockingHandler
@@ -33,5 +23,12 @@ public class HandlersRoute extends Handling {
 
 		// Now call the next handler
 		routingContext.next();
+	}
+
+	@Get("/handler")
+	@Handler
+	public void handler() {
+
+		success("Handler");
 	}
 }

@@ -3,8 +3,8 @@
  */
 package org.jspare.vertx.samples.proxy;
 
-import org.jspare.core.bootstrap.Application;
-import org.jspare.vertx.bootstrap.ApplicationVerticle;
+import org.jspare.core.bootstrap.Runner;
+import org.jspare.vertx.bootstrap.VertxRunner;
 import org.jspare.vertx.builder.VertxBuilder;
 
 import io.vertx.core.Future;
@@ -15,11 +15,11 @@ import io.vertx.spi.cluster.hazelcast.HazelcastClusterManager;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class ConsumerVerticle extends ApplicationVerticle {
+public class ConsumerVerticle extends VertxRunner {
 
 	public static void main(String[] args) {
 
-		Application.run(ConsumerVerticle.class);
+		Runner.run(ConsumerVerticle.class);
 	}
 
 	@Override

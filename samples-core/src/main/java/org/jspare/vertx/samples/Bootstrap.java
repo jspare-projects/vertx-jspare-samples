@@ -3,14 +3,14 @@
  */
 package org.jspare.vertx.samples;
 
-import org.jspare.core.bootstrap.Application;
-import org.jspare.vertx.bootstrap.ApplicationVerticle;
+import org.jspare.core.bootstrap.Runner;
+import org.jspare.vertx.bootstrap.VertxRunner;
 
-public class Bootstrap extends ApplicationVerticle {
+public class Bootstrap extends VertxRunner {
 
 	public static void main(String[] args) {
 
-		Application.run(Bootstrap.class);
+		Runner.run(Bootstrap.class);
 	}
 
 	@Override

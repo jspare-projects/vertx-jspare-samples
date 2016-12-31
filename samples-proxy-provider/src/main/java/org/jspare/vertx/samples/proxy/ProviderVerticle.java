@@ -5,6 +5,7 @@ package org.jspare.vertx.samples.proxy;
 
 import org.jspare.core.bootstrap.Runner;
 import org.jspare.vertx.bootstrap.VertxRunner;
+import org.jspare.vertx.builder.ProxyServiceBuilder;
 import org.jspare.vertx.builder.VertxBuilder;
 
 import io.vertx.core.Future;
@@ -21,6 +22,8 @@ public class ProviderVerticle extends VertxRunner {
 
 	@Override
 	public void start() throws Exception {
+		
+		ProxyServiceBuilder.create(vertx).scanClasspath(true).build();
 	}
 
 	@Override
@@ -30,6 +33,6 @@ public class ProviderVerticle extends VertxRunner {
 		options.setClustered(true);
 		options.setClusterManager(new HazelcastClusterManager());
 
-		return VertxBuilder.create().options(options).deployVerticle(this).scanClasspath4proxyServices(true).build();
+		return VertxBuilder.create().options(options).deployVerticle(this).build();
 	}
 }

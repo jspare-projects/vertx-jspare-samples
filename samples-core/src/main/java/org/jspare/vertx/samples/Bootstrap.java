@@ -5,6 +5,8 @@ package org.jspare.vertx.samples;
 
 import org.jspare.core.bootstrap.Runner;
 import org.jspare.vertx.bootstrap.VertxRunner;
+import org.jspare.vertx.samples.verticle.StartVerticle;
+import org.jspare.vertx.utils.VerticleInitializer;
 
 public class Bootstrap extends VertxRunner {
 
@@ -16,6 +18,11 @@ public class Bootstrap extends VertxRunner {
 	@Override
 	public void start() {
 
-		vertx.eventBus().send("hello", "World!!");
+		vertx.deployVerticle(VerticleInitializer.initialize(StartVerticle.class), ar -> {
+			if(ar.succeeded()){
+				
+				vertx.eventBus().send("hello", "World!!");
+			}
+		});
 	}
 }

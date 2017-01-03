@@ -4,7 +4,7 @@
 package org.jspare.vertx.samples.proxy;
 
 import org.jspare.core.annotation.Component;
-import org.jspare.vertx.annotation.ProxyHandler;
+import org.jspare.vertx.annotation.RegisterProxyService;
 
 import io.vertx.codegen.annotations.ProxyGen;
 import io.vertx.codegen.annotations.VertxGen;
@@ -17,7 +17,7 @@ import io.vertx.core.json.JsonObject;
  */
 @ProxyGen
 @VertxGen
-@ProxyHandler(ProductService.ADDRESS)
+@RegisterProxyService(ProductService.ADDRESS)
 @Component
 public interface ProductService {
 

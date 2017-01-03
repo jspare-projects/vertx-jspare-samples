@@ -3,7 +3,6 @@
  */
 package org.jspare.vertx.samples.verticle;
 
-import org.jspare.vertx.annotation.Verticle;
 import org.jspare.vertx.samples.auth.SimpleAuthProvider;
 import org.jspare.vertx.web.builder.HttpServerBuilder;
 import org.jspare.vertx.web.builder.RouterBuilder;
@@ -20,7 +19,6 @@ import io.vertx.ext.web.sstore.LocalSessionStore;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@Verticle
 public class StartVerticle extends AbstractVerticle {
 
 	@Override

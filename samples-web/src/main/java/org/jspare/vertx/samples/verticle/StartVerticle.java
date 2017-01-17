@@ -24,9 +24,12 @@ public class StartVerticle extends AbstractVerticle {
 	@Override
 	public void start() throws Exception {
 
-		Router router = RouterBuilder.create(vertx).scanClasspath(true).addHandler(CookieHandler.create())
-				.addHandler(SessionHandler.create(LocalSessionStore.create(vertx))).addHandler(BodyHandler.create())
-				.authProvider(SimpleAuthProvider.create()).authHandlerClass(BasicAuthHandler.class)
+		Router router = RouterBuilder.create(vertx)
+				.scanClasspath(true)
+				.addHandler(CookieHandler.create())
+				.addHandler(SessionHandler.create(LocalSessionStore.create(vertx)))
+//				.addHandler(BodyHandler.create())
+//				.authHandler(() -> BasicAuthHandler.create(SimpleAuthProvider.create()))
 				.route(r -> r.path("/webapp/*").handler(StaticHandler.create("webapp"))).build();
 
 		HttpServer httpServer = HttpServerBuilder.create(vertx).router(router).build();

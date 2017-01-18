@@ -19,13 +19,13 @@ public class SessionRoute extends APIHandler {
 	@Handler
 	public void hitcount() {
 
-		Session session = ctx.session();
+		Session session = context.session();
 
 		Integer cnt = session.get("hitcount");
 		cnt = (cnt == null ? 0 : cnt) + 1;
 
 		session.put("hitcount", cnt);
 
-		ctx.response().putHeader("content-type", "text/html").end("<html><body><h1>Hitcount: " + cnt + "</h1></body></html>");
+		context.response().putHeader("content-type", "text/html").end("<html><body><h1>Hitcount: " + cnt + "</h1></body></html>");
 	}
 }

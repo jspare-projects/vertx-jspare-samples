@@ -18,13 +18,13 @@ public class AdminRoute extends APIHandler {
 	@Handler
 	public void deny() {
 
-		success(ctx.user().principal().toString());
+		success(context.user().principal().toString());
 	}
 
 	@Get("/user")
 	@Handler
 	public void user() {
 
-		success(ctx.user().principal().toString());
+		success(context.user().principal().toString());
 	}
 }

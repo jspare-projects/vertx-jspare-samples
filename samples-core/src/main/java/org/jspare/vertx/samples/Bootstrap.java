@@ -4,9 +4,9 @@
 package org.jspare.vertx.samples;
 
 import org.jspare.core.bootstrap.Runner;
+import org.jspare.vertx.bootstrap.VerticleInitializer;
 import org.jspare.vertx.bootstrap.VertxRunner;
 import org.jspare.vertx.samples.verticle.StartVerticle;
-import org.jspare.vertx.utils.VerticleInitializer;
 
 public class Bootstrap extends VertxRunner {
 

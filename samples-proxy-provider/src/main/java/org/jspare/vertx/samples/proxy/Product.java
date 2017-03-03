@@ -3,36 +3,35 @@
  */
 package org.jspare.vertx.samples.proxy;
 
+import java.time.ZonedDateTime;
+
+import org.jspare.vertx.utils.DataObjectConverter;
+
 import io.vertx.codegen.annotations.DataObject;
 import io.vertx.core.json.JsonObject;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
 /**
  * Created by paulo.ferreira on 30/12/2016.
  */
-@DataObject(generateConverter = true)
-@NoArgsConstructor
+@Data
+@DataObject
 public class Product {
 
 	private String name;
+	private ZonedDateTime creation;
 
+	public Product(){
+	}
+	
 	public Product(JsonObject jsonObject) {
 
-		ProductConverter.fromJson(jsonObject, this);
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+		DataObjectConverter.fromJson(jsonObject, this);
 	}
 
 	public JsonObject toJson() {
 		JsonObject json = new JsonObject();
-		ProductConverter.toJson(this, json);
+		DataObjectConverter.toJson(this, json);
 		return json;
 	}
-
 }

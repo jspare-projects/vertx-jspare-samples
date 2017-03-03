@@ -24,7 +24,7 @@ public class ConsumerVerticleRunner extends VertxClusteredRunner {
 
 		ProxyHelper.createProxy(ProductService.class, vertx, ProductService.ADDRESS).findProductById(1, res -> {
 
-			log.debug(res.result().encode());
+			log.debug(res.result().toString());
 		});
 
 	}

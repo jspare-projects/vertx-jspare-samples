@@ -11,7 +11,6 @@ import org.jspare.vertx.samples.model.Car;
 import org.jspare.vertx.web.annotation.handler.Handler;
 import org.jspare.vertx.web.annotation.handling.ArrayModel;
 import org.jspare.vertx.web.annotation.handling.MapModel;
-import org.jspare.vertx.web.annotation.handling.Model;
 import org.jspare.vertx.web.annotation.handling.Parameter;
 import org.jspare.vertx.web.annotation.method.Get;
 import org.jspare.vertx.web.annotation.method.Post;
@@ -37,7 +36,7 @@ public class CarRoute extends APIHandler {
 
 	@Post
 	@Handler
-	public void save(@Model Car car) {
+	public void save( Car car) {
 
 		success(car);
 	}

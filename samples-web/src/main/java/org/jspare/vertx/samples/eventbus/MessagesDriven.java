@@ -4,13 +4,11 @@
 package org.jspare.vertx.samples.eventbus;
 
 import org.jspare.vertx.annotation.Consumer;
-import org.jspare.vertx.annotation.EventBusController;
 
 import io.vertx.core.eventbus.Message;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@EventBusController
 public class MessagesDriven {
 
 	@Consumer("messages.send")

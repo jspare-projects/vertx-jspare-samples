@@ -4,14 +4,12 @@
 package org.jspare.vertx.samples.eventbus;
 
 import org.jspare.vertx.annotation.Consumer;
-import org.jspare.vertx.annotation.EventBusController;
 import org.jspare.vertx.annotation.LocalConsumer;
 
 import io.vertx.core.eventbus.Message;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@EventBusController
 public class Hello {
 
 	@Consumer("hello")

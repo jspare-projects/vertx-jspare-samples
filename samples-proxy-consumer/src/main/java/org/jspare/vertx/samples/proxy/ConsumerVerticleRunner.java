@@ -4,7 +4,6 @@
 package org.jspare.vertx.samples.proxy;
 
 import org.jspare.core.bootstrap.Runner;
-import org.jspare.vertx.bootstrap.VertxClusteredRunner;
 
 import io.vertx.core.spi.cluster.ClusterManager;
 import io.vertx.serviceproxy.ProxyHelper;

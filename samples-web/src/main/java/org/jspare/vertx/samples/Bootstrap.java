@@ -3,21 +3,19 @@
  */
 package org.jspare.vertx.samples;
 
-import org.jspare.core.bootstrap.Runner;
+import io.vertx.core.Future;
+import io.vertx.core.Vertx;
+import org.jspare.core.Application;
 import org.jspare.vertx.bootstrap.VerticleInitializer;
 import org.jspare.vertx.bootstrap.VertxRunner;
 import org.jspare.vertx.builder.EventBusBuilder;
 import org.jspare.vertx.builder.VertxBuilder;
 import org.jspare.vertx.samples.verticle.StartVerticle;
 
-import io.vertx.core.Future;
-import io.vertx.core.Vertx;
-
 public class Bootstrap extends VertxRunner {
 
 	public static void main(String[] args) {
-
-		Runner.run(Bootstrap.class);
+		Application.run(Bootstrap.class);
 	}
 
 	@Override

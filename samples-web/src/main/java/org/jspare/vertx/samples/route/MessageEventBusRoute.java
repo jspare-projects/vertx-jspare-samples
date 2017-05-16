@@ -3,7 +3,6 @@
  */
 package org.jspare.vertx.samples.route;
 
-import org.jspare.vertx.annotation.VertxInject;
 import org.jspare.vertx.web.annotation.handler.Handler;
 import org.jspare.vertx.web.annotation.handling.Parameter;
 import org.jspare.vertx.web.annotation.method.Get;
@@ -13,7 +12,6 @@ import io.vertx.core.eventbus.EventBus;
 
 public class MessageEventBusRoute extends APIHandler {
 
-	@VertxInject
 	private EventBus eventBus;
 
 	@Get("/eventbus/:name")
